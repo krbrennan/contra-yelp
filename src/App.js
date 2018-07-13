@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
-import BusinessCard from './BusinessCard';
+// import BusinessCard from './BusinessCard';
+import CardList from './CardList';
 
 import './App.css';
 import './card.css';
@@ -10,30 +11,28 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.handler = this.handler.bind(this)
+
     this.state = {
       zipCode: '',
       response: [],
-      doneLoading: false
+      doneLoading: false,
+      newSearch: false
     }
   }
 
   filterResults(data){
-    // Access business = array.businesses[x]
-    // console.log(data.businesses)
-    // console.log(data.businesses[0])
-
-    data.businesses.filter((business) => {
-      // console.log(business.rating)
-      // return business.rating < 4;
-      if(business.rating < 4){
-        this.setState({
-          response: [...this.state.response, business]
-        })
-      }
-    });
-    this.setState({doneLoading: true})
+    // this will filter all businesses that have < 4 stars
+    // the array is then reverse-sorted so lowest rated businesses show up first
+    // then state is set
+      let filtered = data.businesses.filter((business) =>{
+        if(business.rating < 4){
+          return business
+        }
+      })
+      let reversed = filtered.sort((a,b)=> a.rating - b.rating)
+      this.setState({response: reversed})
+      this.setState({doneLoading: true})
   }
-
 
   handler(data) {
     this.setState({zipCode: data})
@@ -72,9 +71,9 @@ class App extends Component {
           </header>
           <SearchBar handlerFromParent={this.handler} />
         <div className='businessCard'>
-          <BusinessCard businesses={this.state.response}/>
+          <CardList businesses={this.state.response} />
         </div>
-        </div>
+      </div>
       );
     }
   }

@@ -4,14 +4,14 @@ import 'tachyons';
 import './card.css';
 
 const BusinessCard = (props) => {
-  const first = props.businesses[0]
-  console.log(props.businesses[0])
+  const first = props.businesses
+
   return(
     <div className='cardDiv'>
-      <img className='cardImg' height="250" src={first.image_url} alt='ohNoes!'/>
+      <img className='cardImg' height="250" width="250" src={first.image_url} alt=''/>
     <div className='mainAttributes'>
       <div className='info'>
-        <h5>{first.name}</h5>
+        <h3>{first.name}</h3>
         <p className='businessInfo'>Price: {first.price} •
           {first.categories.map((e) =>{
             return "  " + e.title
