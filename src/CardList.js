@@ -4,7 +4,7 @@ import BusinessCard from './BusinessCard';
 import 'tachyons';
 
 const CardList = (props) => {
-
+console.log(props);
   return(
     <div>
       {

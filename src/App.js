@@ -21,9 +21,15 @@ class App extends Component {
   }
 
   filterResults(data){
-    // this will filter all businesses that have < 4 stars
-    // the array is then reverse-sorted so lowest rated businesses show up first
-    // then state is set
+    // console.log(data.error.code === "LOCATION_NOT_FOUND")
+    console.log(typeof data)
+    if(data.businesses === undefined){
+      alert('Invalid Address or Zip Code!')
+      throw('Invalid Zip Code')
+    } else {
+      // this will filter all businesses that have < 4 stars
+      // the array is then reverse-sorted so lowest rated businesses show up first
+      // then state is set
       let filtered = data.businesses.filter((business) =>{
         if(business.rating < 4){
           return business
@@ -32,13 +38,14 @@ class App extends Component {
       let reversed = filtered.sort((a,b)=> a.rating - b.rating)
       this.setState({response: reversed})
       this.setState({doneLoading: true})
+    }
   }
 
   handler(data) {
     this.setState({zipCode: data})
 
     const zipCode = data
-    const url = `https://api.yelp.com/v3/businesses/search?location=${zipCode}&radius=2000`
+    const url = `https://api.yelp.com/v3/businesses/search?location=${zipCode}&radius=4000`
 
     fetch(url, {
       headers: {
