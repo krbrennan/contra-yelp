@@ -49,7 +49,8 @@ class App extends Component {
 
     fetch(url, {
       headers: {
-        "Authorization": "Bearer amEZRBh5-R0uMNPdotmlE_FdSvaxE4NuyhNjdgiTjHGwVjEkBkJAHrf7H0h-hINH-vHVSikQwjJ5vHKRMRElGlAEk6BVPVNF9Z-pXCfhon0mD09i-rlwBzP2JWhGW3Yx"
+        "Authorization": "Bearer amEZRBh5-R0uMNPdotmlE_FdSvaxE4NuyhNjdgiTjHGwVjEkBkJAHrf7H0h-hINH-vHVSikQwjJ5vHKRMRElGlAEk6BVPVNF9Z-pXCfhon0mD09i-rlwBzP2JWhGW3Yx",
+        'Access-Control-Allow-Origin': '*'
       }
     })
       .then(res => res.json())
@@ -59,12 +60,13 @@ class App extends Component {
   }
 
   render() {
+    // need to handle first-visit. if they haven't searched anything,
+    // display a landing page like yelp does
     if(this.state.doneLoading === false){
       return (
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">Find All the Worst-Rated Businesses Near You</h1>
-            <h3>{this.state.zipCode}</h3>
           </header>
           <SearchBar handlerFromParent={this.handler} />
         </div>

@@ -28,7 +28,7 @@ class SearchBar extends Component {
     return(
       <form onSubmit={this.submitHandler} className='pa3'>
         <input
-          className='pa3 bg-green tc'
+          className='pa3 bg-light-green tc'
           type='text'
           id='searchBox'
           placeholder='Enter Zip Code'
