@@ -22,6 +22,7 @@ class App extends Component {
 
   filterResults(data){
     // console.log(data.error.code === "LOCATION_NOT_FOUND")
+    console.log(data)
     console.log(typeof data)
     if(data.businesses === undefined){
       alert('Invalid Address or Zip Code!')
@@ -41,13 +42,17 @@ class App extends Component {
     }
   }
 
-  handler(data) {
+  async handler(data) {
     this.setState({zipCode: data})
     const proxy = `https://cors-anywhere.herokuapp.com/`
     const zipCode = data
     const url = `https://api.yelp.com/v3/businesses/search?location=${zipCode}&radius=4000`
+    const proxyAndUrl = proxy + url
+    // const response = await fetch(proxy + url)
+    // const json = await response.json()
+    // this.filterResults(json)
 
-    fetch(url+proxy, {
+    fetch(proxyAndUrl, {
       headers: {
         'Authorization': 'Bearer amEZRBh5-R0uMNPdotmlE_FdSvaxE4NuyhNjdgiTjHGwVjEkBkJAHrf7H0h-hINH-vHVSikQwjJ5vHKRMRElGlAEk6BVPVNF9Z-pXCfhon0mD09i-rlwBzP2JWhGW3Yx',
         'Access-Control-Allow-Origin': '*',
