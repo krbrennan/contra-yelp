@@ -43,14 +43,15 @@ class App extends Component {
 
   handler(data) {
     this.setState({zipCode: data})
-
+    const proxy = `https://cors-anywhere.herokuapp.com/`
     const zipCode = data
     const url = `https://api.yelp.com/v3/businesses/search?location=${zipCode}&radius=4000`
 
-    fetch(url, {
+    fetch(url+proxy, {
       headers: {
-        "Authorization": "Bearer amEZRBh5-R0uMNPdotmlE_FdSvaxE4NuyhNjdgiTjHGwVjEkBkJAHrf7H0h-hINH-vHVSikQwjJ5vHKRMRElGlAEk6BVPVNF9Z-pXCfhon0mD09i-rlwBzP2JWhGW3Yx",
-        'Access-Control-Allow-Origin': '*'
+        'Authorization': 'Bearer amEZRBh5-R0uMNPdotmlE_FdSvaxE4NuyhNjdgiTjHGwVjEkBkJAHrf7H0h-hINH-vHVSikQwjJ5vHKRMRElGlAEk6BVPVNF9Z-pXCfhon0mD09i-rlwBzP2JWhGW3Yx',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Authorization'
       }
     })
       .then(res => res.json())
