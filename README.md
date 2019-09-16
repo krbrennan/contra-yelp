@@ -1,4 +1,4 @@
-<h1>Check it out <a href="https://krbrennan.github.io/contra-yelp/" rel="noreferrer" target="_blank">LIVE</a><h1>
+<h1>Check it out <a href="https://krbrennan.github.io/contra-yelp/" rel="noreferrer" target="_blank">LIVE</a></h1>
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
