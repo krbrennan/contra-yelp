@@ -22,8 +22,8 @@ class App extends Component {
 
   filterResults(data){
     // console.log(data.error.code === "LOCATION_NOT_FOUND")
-    console.log(data)
-    console.log(typeof data)
+    // console.log(data)
+    // console.log(typeof data)
     if(data.businesses === undefined){
       alert('Invalid Address or Zip Code!')
       throw('Invalid Zip Code')
@@ -72,7 +72,7 @@ class App extends Component {
       return (
         <div className="App">
           <header className="App-header">
-            <h1 className="App-title">Find All the Worst-Rated Businesses Near You</h1>
+            <h1 className="App-title">Find All the Lowest-Rated Businesses Near You</h1>
           </header>
           <SearchBar handlerFromParent={this.handler} />
         </div>
@@ -81,7 +81,7 @@ class App extends Component {
       return(
         <div className="App">
           <header className="App-header">
-            <h1 className="App-title">Find All the Worst-Rated Businesses Near You</h1>
+            <h1 className="App-title">Find All the Lowest-Rated Businesses Near You</h1>
             <h3>{this.state.zipCode}</h3>
           </header>
           <SearchBar handlerFromParent={this.handler} />
