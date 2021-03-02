@@ -47,7 +47,7 @@ class App extends Component {
     const proxy = `https://cors-anywhere.herokuapp.com/`
     const zipCode = data
     const url = `https://api.yelp.com/v3/businesses/search?location=${zipCode}&radius=4000`
-    const proxyAndUrl = proxy + url
+    const proxyAndUrl = url
     // const response = await fetch(proxy + url)
     // const json = await response.json()
     // this.filterResults(json)
