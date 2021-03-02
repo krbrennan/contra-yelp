@@ -53,8 +53,9 @@ class App extends Component {
     // this.filterResults(json)
 
     fetch(proxyAndUrl, {
+      credentials: 'include',
       headers: {
-        'Authorization': 'Bearer amEZRBh5-R0uMNPdotmlE_FdSvaxE4NuyhNjdgiTjHGwVjEkBkJAHrf7H0h-hINH-vHVSikQwjJ5vHKRMRElGlAEk6BVPVNF9Z-pXCfhon0mD09i-rlwBzP2JWhGW3Yx',
+        'Authorization': 'Bearer g5PK0Bi3oydQ4umv1sjFrGO8O5u17OEIf_wnCQxXjULRxJ2KbA1KHehyU5g9DzjutX2TaWp4Hpdo-hDdX9HkECh_nBgMvynakUZdO1iTJlZ_cm-nRYond3rzHaI-YHYx',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'Authorization'
       }
