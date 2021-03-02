@@ -44,16 +44,15 @@ class App extends Component {
 
   async handler(data) {
     this.setState({zipCode: data})
-    const proxy = `https://cors-anywhere.herokuapp.com/`
+    const proxy = `https://lit-hamlet-77934.herokuapp.com/`
     const zipCode = data
     const url = `https://api.yelp.com/v3/businesses/search?location=${zipCode}&radius=4000`
-    const proxyAndUrl = url
+    const proxyAndUrl = proxy + url
     // const response = await fetch(proxy + url)
     // const json = await response.json()
     // this.filterResults(json)
 
     fetch(proxyAndUrl, {
-      mode: 'no-cors',
       headers: {
         'Authorization': 'g5PK0Bi3oydQ4umv1sjFrGO8O5u17OEIf_wnCQxXjULRxJ2KbA1KHehyU5g9DzjutX2TaWp4Hpdo-hDdX9HkECh_nBgMvynakUZdO1iTJlZ_cm-nRYond3rzHaI-YHYx',
         'Access-Control-Allow-Origin': '*',
