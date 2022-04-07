@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'tachyons';
+import '../Css/search-bar.css'
 
 class SearchBar extends Component {
   constructor(props){
@@ -26,9 +27,9 @@ class SearchBar extends Component {
 
   render(){
     return(
-      <form onSubmit={this.submitHandler} className='pa3'>
+      <form onSubmit={this.submitHandler} className='pa3 form mt-5 mb-5'>
         <input
-          className='pa3 bg-light-green tc'
+          className='pa3 search-input tc'
           type='text'
           id='searchBox'
           placeholder='Enter Zip Code'

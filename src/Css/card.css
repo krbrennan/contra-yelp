@@ -1,0 +1,39 @@
+:root {
+  --large-font: calc(1rem + 1vw + 1.2rem);
+  --medium-font: calc(0.8rem + 1vw + 1rem);
+  --small-font: calc(0.4rem + 1vw + 0.6rem);
+  --grey-bg: rgba(147, 162, 155, 0.1);
+}
+
+.card-div {
+  border: 2px solid #f3f3f3;
+  display: flex;
+  margin: 2em;
+}
+.card-div .card-img-container {
+  max-height: 400px;
+  padding: 0;
+}
+.card-div .card-img-container .card-img {
+  max-height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+.card-div .business-info-container {
+  margin: 0;
+  background: var(--grey-bg);
+  justify-content: space-between;
+}
+.card-div .business-info-container .main-attributes .info h3 {
+  font-size: var(--large-font);
+  text-decoration: underline;
+}
+.card-div .business-info-container .main-attributes .info .business-price {
+  font-size: var(--small-font);
+}
+.card-div .business-info-container .main-attributes .info .business-info {
+  font-size: var(--medium-font);
+}
+.card-div .business-info-container .address-container .address p {
+  font-size: var(--small-font);
+}

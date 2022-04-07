@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
-import SearchBar from './SearchBar';
+import SearchBar from './components/SearchBar';
 // import BusinessCard from './BusinessCard';
-import CardList from './CardList';
+import CardList from './components/CardList';
 
-import './App.css';
-import './card.css';
+// css reset
+import './Css/reset.css'
+// scss stylesheet
+import './Css/index.css';
+
+
+// import './App.css';
+// import './card.css';
+
+// key
+const apikey = process.env.REACT_APP_API_KEY;
+
 
 class App extends Component {
 
@@ -54,7 +64,7 @@ class App extends Component {
 
     fetch(proxyAndUrl, {
       headers: {
-        'Authorization': 'Bearer g5PK0Bi3oydQ4umv1sjFrGO8O5u17OEIf_wnCQxXjULRxJ2KbA1KHehyU5g9DzjutX2TaWp4Hpdo-hDdX9HkECh_nBgMvynakUZdO1iTJlZ_cm-nRYond3rzHaI-YHYx',
+        'Authorization': `Bearer ${apikey}`,
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'Authorization'
       }
@@ -71,8 +81,10 @@ class App extends Component {
     if(this.state.doneLoading === false){
       return (
         <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Find All the Lowest-Rated Businesses Near You</h1>
+          <header className="app-header">
+            <div className='title-container'>
+              <h1 className="app-title">Find All the Lowest-Rated Restaurants Near You</h1>
+            </div>
           </header>
           <SearchBar handlerFromParent={this.handler} />
         </div>
@@ -80,12 +92,14 @@ class App extends Component {
     } else {
       return(
         <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Find All the Lowest-Rated Businesses Near You</h1>
-            <h3>{this.state.zipCode}</h3>
+          <header className="app-header">
+
+          <div className='title-container'>
+            <h1 className="app-title">Find All the Lowest-Rated Restaurants Near You</h1>
+          </div>
           </header>
           <SearchBar handlerFromParent={this.handler} />
-        <div className='businessCard'>
+        <div className='business-card'>
           <CardList businesses={this.state.response} />
         </div>
       </div>

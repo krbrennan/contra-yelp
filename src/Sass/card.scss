@@ -1,0 +1,53 @@
+:root {
+  --large-font: calc(1rem + 1vw + 1.2rem);
+  --medium-font: calc(0.8rem + 1vw + 1rem);
+  --small-font: calc(0.4rem + 1vw + 0.6rem);
+
+  // colors
+  --grey-bg: rgba(147, 162, 155, 0.1);
+}
+
+.card-div {
+  border: 2px solid #f3f3f3;
+  display: flex;
+  margin: 2em;
+  .card-img-container {
+    max-height: 400px;
+    padding: 0;
+    .card-img {
+      max-height: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .business-info-container {
+    margin: 0;
+    background: var(--grey-bg);
+    justify-content: space-between;
+    .main-attributes {
+      .info {
+        h3 {
+          font-size: var(--large-font);
+          text-decoration: underline;
+        }
+        .business-price {
+          font-size: var(--small-font);
+        }
+        .type-of-food {
+        }
+        .business-info {
+          font-size: var(--medium-font);
+        }
+      }
+    }
+
+    .address-container {
+      .address {
+        p {
+          font-size: var(--small-font);
+        }
+      }
+    }
+  }
+}

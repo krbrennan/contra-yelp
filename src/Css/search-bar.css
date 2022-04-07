@@ -1,0 +1,15 @@
+:root {
+  --input-bg: #93a29b;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+.form .search-input {
+  min-width: 350px;
+  background: var(--input-bg);
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  font-size: 1.8rem;
+}
